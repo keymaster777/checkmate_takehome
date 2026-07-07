@@ -18,3 +18,6 @@ I'm bouncing around linux distros right now so I opted to just set this up with 
 
 ### Takehome Notes
 - Instructions say to refer to menu as-is, I interpreted that as assuring that I actually parse it instead of drop the data in the app with an easier format. To be compliant with those instructions and still be 'railsy' I am handling the parsing via seeding and will be using a MenuItem model for the actual code solution. 
+
+### AI Usage Disclaimer
+- It's been a while since I've set up a rails project from scratch and my docker knowledge is dated, I directed claude in setting up the docker config.
