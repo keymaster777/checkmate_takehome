@@ -1,6 +1,8 @@
 class ApiController < ApplicationController
 
     def ping
-        render json: { message: "pong" }
+        items = MenuItem.all
+        #render json: { message: "pong" }
+        render json: items
     end
 end
