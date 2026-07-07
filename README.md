@@ -19,5 +19,7 @@ I'm bouncing around linux distros right now so I opted to just set this up with 
 ### Takehome Notes
 - Instructions say to refer to menu as-is, I interpreted that as assuring that I actually parse it instead of drop the data in the app with an easier format. To be compliant with those instructions and still be 'railsy' I am handling the parsing via seeding and will be using a MenuItem model for the actual code solution. 
 
+- Reading through instructions I think I'll end up making an Order model to have an intuitive spot for validating inputs instead of handling it in the controller. Instructions dont say anything about storing order data but in a real use case I would assume they need to be stored so I'll either just do that or at least make sure its an easy code tweak to save orders to the DB. Having the model ready is most of the work anyways.
+
 ### AI Usage Disclaimer
 - It's been a while since I've set up a rails project from scratch and my docker knowledge is dated, I directed claude in setting up the docker config.
