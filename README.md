@@ -11,7 +11,7 @@ I'm bouncing around linux distros right now so I opted to just set this up with 
 
 ### Spin up and Container usage
 - After initial setup you can spin up the app with `docker compose up`
-- To use the container like any normal rails instance you have to options
+- To use the container like any normal rails instance you have two options
 1. Run `docker compose exec web bash` to enter the container, now you can run commands like `rails c`
 2. Run any rails command prepended with this `docker compose run web`, similar to the pattern in initial setup3
 
