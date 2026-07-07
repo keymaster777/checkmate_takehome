@@ -19,7 +19,9 @@ I'm bouncing around linux distros right now so I opted to just set this up with 
 ### Takehome Notes
 - Instructions say to refer to menu as-is, I interpreted that as assuring that I actually parse it instead of drop the data in the app with an easier format. To be compliant with those instructions and still be 'railsy' I am handling the parsing via seeding and will be using a MenuItem model for the actual code solution. 
 
-- Reading through instructions I think I'll end up making an Order model to have an intuitive spot for validating inputs instead of handling it in the controller. Instructions dont say anything about storing order data but in a real use case I would assume they need to be stored so I'll either just do that or at least make sure its an easy code tweak to save orders to the DB. Having the model ready is most of the work anyways.
+- Reading through instructions I think I'll end up making an Order model to have an intuitive spot for validating inputs instead of handling it in the controller. Instructions dont say anything about storing order data but in a real use case I would assume they need to be stored so I'll either just do that or at least make sure its an easy code tweak to save orders to the DB. Having the model ready is most of the work anyways. (short break) Coming back to this after running an errand Im thinking i'll just save the order to the db, having a POST endpoint to the base resource name kind of implies (assuming REST) that we're actually creating a resource.
+
+- When spinning up the app I forgot the API flag was an option, i'm leaning into this and namespacing the "order" endpoint to "api" for now for clarity. Changing an endpoints path like this would be lunacy in a real app, I'm happy to change it back in routes if necessary, this just felt like the rails way
 
 ### AI Usage Disclaimer
 - It's been a while since I've set up a rails project from scratch and my docker knowledge is dated, I directed claude in setting up the docker config.

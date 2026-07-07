@@ -1,4 +1,4 @@
-class ApiController < ApplicationController
+class Api::PingController < ApplicationController
 
     def ping
         items = MenuItem.all
