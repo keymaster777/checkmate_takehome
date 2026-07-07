@@ -23,5 +23,7 @@ I'm bouncing around linux distros right now so I opted to just set this up with 
 
 - When spinning up the app I forgot the API flag was an option, i'm leaning into this and namespacing the "order" endpoint to "api" for now for clarity. Changing an endpoints path like this would be lunacy in a real app, I'm happy to change it back in routes if necessary, this just felt like the rails way
 
+- Price and preptime on the Order should represent the cost and prep time at the time of order creation so ill be calculating them and storing them at creation time instead of exposing methods that calculate them dynamically from the associated data after the fact. This prevents discrepencies if a menu items cost or preptime get updated in the future
+
 ### AI Usage Disclaimer
 - It's been a while since I've set up a rails project from scratch and my docker knowledge is dated, I directed claude in setting up the docker config.
