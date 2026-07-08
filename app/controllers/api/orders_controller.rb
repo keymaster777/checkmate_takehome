@@ -5,19 +5,18 @@ class Api::OrdersController < ApplicationController
     def create
         return unless validate_items_param
 
-
-        begin
         order = Order.create!(order_params)
 
+        # Using paired down render to match instruction examples
         #render json: order, status: :created
+        
         render json: order.as_json(
             except: [:updated_at, :created_at, :id]
         ), status: :created
 
-        # Catching any active record error, we may want to handle other errors differently
-        rescue ActiveRecord::ActiveRecordError => e
-            render json: { error: e.message }, status: :bad_request
-        end
+    # Catching any active record error, we may want to handle other errors differently
+    rescue ActiveRecord::ActiveRecordError => e
+        render json: { error: e.message }, status: :bad_request
     end
 
     private

@@ -12,14 +12,15 @@ class Order < ApplicationRecord
     DISCOUNT_RATE = 0.1
     STATION_COUNT = 2
 
+    # Can potentially be re-used later if theres a need to recalculate from updated menu items
     def build_order_details
         self.subtotal_cents = order_items.sum { |oi| oi.menu_item.price_cents * oi.qty }
         if subtotal_cents >= DISCOUNT_THRESHOLD_CENTS
             self.discount_cents = (subtotal_cents * DISCOUNT_RATE).to_i
         end
         self.total_cents = subtotal_cents - discount_cents
-        self.prep_schedule = get_prep_schedule
-        self.estimated_prep_seconds = prep_schedule.map{|station_time| station_time[1]}.max
+        self.prep_schedule = get_prep_schedule.sort_by(&:last).reverse
+        self.estimated_prep_seconds = prep_schedule.first.last # "If you ain't first, you're last!"
     end
 
 
@@ -32,6 +33,6 @@ class Order < ApplicationRecord
             station_totals[station_index] += prep_time
         end
 
-        station_totals.each_with_index.map { |total, index| [index + 1, total] }.sort_by(&:last).reverse
+        station_totals.each_with_index.map { |total, index| [index + 1, total] }
     end
 end
