@@ -15,6 +15,8 @@ I'm bouncing around linux distros right now so I opted to just set this up with 
 1. Run `docker compose exec web bash` to enter the container, now you can run commands like `rails c`
 2. Run any rails command prepended with this `docker compose run web`, similar to the pattern in initial setup3
 
+## Reviewer Notes
+- Most of the solution lives in `app/controllers/api/orders_controller.rb` and `app/models/order.rb`. There is an argument to be made for the `build_order_details` method to be moved to a service instead of living in the model. If it grew any larger I would lean into a dedicated small service class
 
 ### Takehome Notes
 - Instructions say to refer to menu as-is, I interpreted that as assuring that I actually parse it instead of drop the data in the app with an easier format. To be compliant with those instructions and still be 'railsy' I am handling the parsing via seeding and will be using a MenuItem model for the actual code solution. 

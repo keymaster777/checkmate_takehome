@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe OrderItem do
+RSpec.describe OrderItem, type: :model do
   describe 'validations' do
     it 'is invalid when qty is less than 1' do
       order_item = OrderItem.new(qty: 0)
