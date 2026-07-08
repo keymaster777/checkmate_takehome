@@ -9,7 +9,10 @@ class Api::OrdersController < ApplicationController
         begin
         order = Order.create!(order_params)
 
-        render json: order, status: :created
+        #render json: order, status: :created
+        render json: order.as_json(
+            except: [:updated_at, :created_at, :id]
+        ), status: :created
 
         # Catching any active record error, we may want to handle other errors differently
         rescue ActiveRecord::ActiveRecordError => e
